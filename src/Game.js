@@ -178,6 +178,8 @@ function Game({ sourceAddress, destinationAddress, algorithmType }) {
           continue;
         }
         const newCost = costSoFar[current] + moveCost;
+        console.log("Costs so far: " + costSoFar[current])
+        console.log("Move Cost: " + moveCost)
 
         if (!costSoFar[neighbor] || newCost < costSoFar[neighbor]) {
           cameFrom[neighbor] = current;
@@ -294,6 +296,7 @@ function Game({ sourceAddress, destinationAddress, algorithmType }) {
         const neighbor = [current[0] + dir[0], current[1] + dir[1]];
         const moveCost = dir[0] === 0 ? 2 : 1; // Adjust cost based on direction
 
+        console.log(moveCost)
         if (
           neighbor[0] < 0 ||
           neighbor[0] >= array.length ||

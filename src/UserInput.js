@@ -20,6 +20,19 @@ function UserInput() {
   const sourceOptions = generateOptions();
   const destOptions = generateOptions();
 
+  // Map coordinates to corresponding letters
+  const coordinateToLetter = {
+    '0,0': 'A',
+    '0,2': 'B',
+    '0,4': 'C',
+    '2,0': 'D',
+    '2,2': 'E',
+    '2,4': 'F',
+    '4,0': 'G',
+    '4,2': 'H',
+    '4,4': 'I',
+  };
+
   return (
     <>
       <Form>
@@ -36,7 +49,7 @@ function UserInput() {
             >
               {sourceOptions.map((option, index) => (
                 <option key={index} value={`${option.x},${option.y}`}>
-                  {`${option.x},${option.y}`}
+                  {`${coordinateToLetter[`${option.x},${option.y}`]} (${option.x},${option.y})`}
                 </option>
               ))}
             </Form.Control>
@@ -53,7 +66,7 @@ function UserInput() {
             >
               {destOptions.map((option, index) => (
                 <option key={index} value={`${option.x},${option.y}`}>
-                  {`${option.x},${option.y}`}
+                  {`${coordinateToLetter[`${option.x},${option.y}`]} (${option.x},${option.y})`}
                 </option>
               ))}
             </Form.Control>
