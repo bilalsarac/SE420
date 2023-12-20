@@ -1,3 +1,3 @@
-Artificial Intelligence and Expert Systems Course
+## Artificial Intelligence and Expert Systems Course
 
 A* search and Uniform Cost Search
